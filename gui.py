@@ -1,15 +1,35 @@
 from tkinter import *
+from calculator import Calculator
 
-print("Starting GUI...")
+calc = Calculator()
 
 root = Tk()
-root.title("Ishani's Calculator")
+root.title("Calculator")
 
 e = Entry(root, width=40, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
-def calcs():
-    pass
+def calcs(sign):
+    num = float(e.get())
+    if sign == "+":
+        clear()
+        calc.plus(num)
+    elif sign == "-":
+        clear()
+        calc.minus(num)
+    elif sign == "/":
+        clear()
+        calc.divide(num)
+    elif sign == "*":
+        clear()
+        calc.multiply(num)
+
+def equal():
+    num = float(e.get())
+    calcs(calc.operation)
+    e.insert(0, calc.calculation)
+    calc.calculation = 0
+
 
 def clear():
     e.delete(0, END)
@@ -34,9 +54,9 @@ button_7 = Button(root, text="7", padx=35, pady=24, command=lambda: button_click
 button_8 = Button(root, text="8", padx=35, pady=24, command=lambda: button_click(8))
 button_9 = Button(root, text="9", padx=35, pady=24, command=lambda: button_click(9))
 button_0 = Button(root, text="0", padx=35, pady=24, command=lambda: button_click(0))
-button_add = Button(root, text="+", padx=33, pady=24, command=lambda: add())
-button_equal = Button(root, text="=", padx=34, pady=24, command=lambda: button_click())
-button_del = Button(root, text="del", padx=30, pady=22, command=lambda: Del())
+button_add = Button(root, text="+", padx=33, pady=24, command=lambda: calcs("+"))
+button_equal = Button(root, text="=", padx=34, pady=24, command=lambda: equal())
+button_del = Button(root, text="Del", padx=30, pady=22, command=lambda: Del())
 button_clear = Button(root, text="Clear", padx=69, pady=24, command=lambda: clear())
 
 credit = Label(root, text="Made by Ayush Mishra")
