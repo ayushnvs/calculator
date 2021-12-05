@@ -1,5 +1,9 @@
 # Calculator
 
-This calculator is designed by using Tkinter.
+This calculator is designed by using Tkinter. Its executable is obtained by using Pyinstaller. It is located in calculator > dist.
 
-**Note:** It still has few bugs.
+### Screenshot
+
+![](ss.jpg)
+
+**Note:** It might still have few bugs.

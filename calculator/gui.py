@@ -7,7 +7,7 @@ px, py = (30, 20)
 root = Tk()
 root.title("Calculator")
 
-e = Entry(root, width=40, borderwidth=5)
+e = Entry(root, width=45, borderwidth=3)
 e.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
 def working(sign):
@@ -82,7 +82,7 @@ button_equal = Button(root, text="=", padx=px-4, pady=52, command=lambda: equal(
 button_del = Button(root, text="del", padx=px-5, pady=py, command=lambda: Del())
 button_clear = Button(root, text="clr", padx=px-3, pady=py, command=lambda: clear(True))
 
-credit = Label(root, text="Made by Ayush Mishra")
+credit = Label(root, text="Made by ayushnvs@github")
 credit.grid(row=6, column=0, columnspan=4)
 
 button_1.grid(row=4, column=0)
